@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cattle Health Status</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="model.js" defer></script>
+    <script src="analyze.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Cattle Health Monitoring System</h2>
+            <p>Upload an image of your cattle and health parameters for analysis.</p>
+        </div>
+        <div class="input-section">
+            <input type="file" id="image-input" accept="image/*" required>
+            <button id="analyze-button">Analyze Image</button>
+        </div>
+        <div class="health-parameters">
+            <h3>Health Parameters</h3>
+            <label for="temperature">Temperature:</label>
+            <input type="number" id="temperature" placeholder="e.g., 38.5" required>
+            <label for="pulse">Pulse:</label>
+            <input type="number" id="pulse" placeholder="e.g., 70" required>
+            <label for="respiration">Respiration:</label>
+            <input type="number" id="respiration" placeholder="e.g., 20" required>
+            <label for="feed-intake">Feed Intake:</label>
+            <input type="number" id="feed-intake" placeholder="e.g., 5" required>
+            <label for="water-consumption">Water Consumption:</label>
+            <input type="number" id="water-consumption" placeholder="e.g., 10" required>
+            <label for="hrv">HRV:</label>
+            <input type="number" id="hrv" placeholder="e.g., 30" required>
+        </div>
+        <div id="result" class="result">
+            <h3>Analysis Result</h3>
+            <p id="health-status"></p>
+            <p id="disease-probability"></p>
+            <p id="treatment-recommendation"></p>
+        </div>
+    </div>
+    <script>
+        document.getElementById('analyze-button').addEventListener('click', async () => {
+            const imageInput = document.getElementById('image-input');
+            const temperature = parseFloat(document.getElementById('temperature').value);
+            const pulse = parseFloat(document.getElementById('pulse').value);
+            const respiration = parseFloat(document.getElementById('respiration').value);
+            const feedIntake = parseFloat(document.getElementById('feed-intake').value);
+            const waterConsumption = parseFloat(document.getElementById('water-consumption').value);
+            const hrv = parseFloat(document.getElementById('hrv').value);
+
+            if (imageInput.files.length === 0) {
+                alert('Please upload an image!');
+                return;
+            }
+
+            const file = imageInput.files[0];
+            const imageTensor = await loadImageAsTensor(file); // Function to convert image to tensor
+
+            const result = await model.predict(imageTensor, {
+                temperature,
+                pulse,
+                respiration,
+                feedIntake,
+                waterConsumption,
+                hrv
+            });
+
+            displayResults(result);
+        });
+
+        async function loadImageAsTensor(file) {
+            return new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.onload = async (event) => {
+                    const img = new Image();
+                    img.src = event.target.result;
+                    img.onload = () => {
+                        const tensor = tf.browser.fromPixels(img).resizeBilinear([224, 224]).expandDims(0).toFloat().div(255);
+                        resolve(tensor);
+                    };
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        function displayResults(result) {
+            document.getElementById('health-status').innerText = `Health Status: ${result.healthStatus}`;
+            document.getElementById('disease-probability').innerText = `Disease Probability: ${result.diseaseProbability.toFixed(2)}`;
+            document.getElementById('treatment -recommendation').innerText = `Treatment Recommendation: ${result.treatmentRecommendation}`;
+        }
+    </script>
+</body>
+</html>

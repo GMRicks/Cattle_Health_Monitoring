@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed Intake Monitoring - CattleCare Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="feed-intake.css">
+</head>
+<body>
+    <nav class="navbar">
+        <!-- Your navigation menu here -->
+    </nav>
+
+    <main class="content">
+        <h1>Feed Intake Monitoring</h1>
+        
+        <section id="feed-input" class="feed-section">
+            <h2>Record Daily Feed Intake</h2>
+            <form id="feed-form">
+                <label for="date">Date:</label>
+                <input type="date" id="date" required>
+                
+                <label for="feed-amount">Amount (kg):</label>
+                <input type="number" id="feed-amount" min="0" step="0.1" required>
+                
+                <label for="feed-type">Feed Type:</label>
+                <select id="feed-type" required>
+                    <option value="hay">Hay</option>
+                    <option value="silage">Silage</option>
+                    <option value="concentrate">Concentrate</option>
+                    <option value="pasture">Pasture</option>
+                </select>
+                
+                <button type="submit" class="btn">Record Intake</button>
+            </form>
+        </section>
+
+        <section id="feed-comparison" class="feed-section">
+            <h2>Appetite Comparison</h2>
+            <div class="comparison-container">
+                <div class="actual-intake">
+                    <h3>Actual Intake</h3>
+                    <p id="actual-intake-value">0 kg</p>
+                </div>
+                <div class="ideal-intake">
+                    <h3>Ideal Intake</h3>
+                    <p id="ideal-intake-value">0 kg</p>
+                </div>
+            </div>
+            <div id="intake-chart"></div>
+        </section>
+
+        <section id="nutritional-info" class="feed-section">
+            <h2>Nutritional Information</h2>
+            <table id="nutrition-table">
+                <thead>
+                    <tr>
+                        <th>Nutrient</th>
+                        <th>Amount</th>
+                        <th>% of Requirement</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- This will be populated by JavaScript -->
+                </tbody>
+            </table>
+        </section>
+
+        <section id="feeding-tips" class="feed-section">
+            <h2>Feeding Tips</h2>
+            <ul id="tips-list">
+                <!-- This will be populated by JavaScript -->
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Your footer content here -->
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="feed-intake.js"></script>
+</body>
+</html>

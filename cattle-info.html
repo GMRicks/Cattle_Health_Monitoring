@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Cattle Information</title>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">CattleCare</div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+            <a href="index.html">Health Monitoring</a>
+            <div class="dropdown-content">
+                <a href="temperature.html">Temperature</a>
+                <a href="pulse.html">Pulse Rate</a>
+                <a href="respiratory.html">Respiratory Rate</a>
+                <a href="feed-intake.html">Feed Intake</a>
+                <a href="water-consumption.html">Water Consumption</a>
+                <a href="milk-production.html">Milk Production</a>
+                <a href="heart-rate-variability.html">Heart Rate Variability</a>
+            </div>
+        </li>
+        <li><a href="disease-detection.html">Disease Detection</a></li>
+        <li><a href="#about">About Cattle</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="cattle-info.html">Your Cattle</a></li>
+    </ul>
+</nav>
+
+  <section id="cattle-info" class="section">
+    <h2>Cattle Information</h2>
+    <div class="cattle-info-container">
+      <div class="cattle-image">
+        <img id="default-image" src="cattle-info.jpg" alt="Cattle Image" class="cattle-imageEnlarge">
+        <input type="file" id="image-uploader" accept="image/*" style="display: none;">
+        <button id="upload-button">Upload Image</button>
+      </div>
+      <div class="cattle-details">
+        <h3>Cattle Name: <span id="cattle-name"></span></h3>
+        <h3>Cattle Type: <span id="cattle-type"></span></h3>
+        <button class="btn" id="add-cattle-btn">Add Cattle</button>
+        <div class="health-monitoring">
+          <h3>Health Monitoring</h3>
+          <ul>
+            <li>
+              <h4>Temperature:</h4>
+              <p>Current Temperature: <span id="current-temp"></span>°C</p>
+              <p>Ideal Temperature: 38-40°C</p>
+              <p>Status: <span id="temp-status"></span></p>
+            </li>
+            <li>
+              <h4>Heart Rate:</h4>
+              <p>Current Heart Rate: <span id="current-heart-rate"></span> beats/min</p>
+              <p>Ideal Heart Rate: 40-80 beats/min</p>
+              <p>Status: <span id="heart-rate-status"></span></p>
+            </li>
+            <li>
+              <h4>Respiratory Rate:</h4>
+              <p>Current Respiratory Rate: <span id="current-respiratory-rate"></span> breaths/min</p>
+              <p>Ideal Respiratory Rate: 10-30 breaths/min</p>
+              <p>Status: <span id="respiratory-rate-status"></span></p>
+            </li>
+            <li>
+              <h4>Feed Intake:</h4>
+              <p>Current Feed Intake: <span id="current-feed-intake"></span> kg/day</p>
+              <p>Ideal Feed Intake: 2-3 kg/day</p>
+              <p>Status: <span id="feed-intake-status"></span></p>
+            </li>
+            <li>
+              <h4>Water Consumption:</h4>
+              <p>Current Water Consumption: <span id="current-water-consumption"></span> liters/day</p>
+              <p>Ideal Water Consumption: 10-20 liters/day</p>
+              <p>Status: <span id="water-consumption-status"></span></p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <button class="btn" id="disease-detection-btn">Disease Detection</button>
+    <button class="btn" id="common-disease-btn">Common Diseases</button>
+    <div class="cattle-info-general">
+      <h3>Cattle Information</h3>
+      <p>Cattle are large, domesticated, even-toed ungulates. They are a prominent modern member of the subfamily Bovinae, are the most widespread species of the genus Bos, and are most commonly classified collectively as Bos taurus.</p>
+      <p>Cattle are raised as livestock for meat (beef and veal), as dairy animals for milk and other dairy products, and as draft animals (oxen or bullocks that pull carts, plows and other implements).</p>
+    </div>
+
+    <!-- Image Upload Feature -->
+
+    <script>
+      // Optional JavaScript for handling image upload
+      document.getElementById('upload-button').addEventListener('click', function() {
+        document.getElementById('image-uploader').click();
+      });
+
+      document.getElementById('image-uploader').addEventListener('change', function() {
+        const uploader = document.getElementById('image-uploader');
+        const defaultImage = document.getElementById('default-image');
+
+        if (uploader.files && uploader.files[0]) {
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            defaultImage.src = e.target.result; // Display uploaded image
+          }
+          reader.readAsDataURL(uploader.files[0]); // Read the file as a data URL
+        }
+      });
+    </script>
+  </section>
+
+  <script src="scripts.js"></script>
+  <script src="cattle-info.js"></script>
+</body>
+</html>

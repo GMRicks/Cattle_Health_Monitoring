@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CattleCare: Advanced Health Monitoring</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <style>
+        *{
+            margin: 0;
+            align-items: left;
+        }
+    </style>
+    <nav class="navbar">
+        <div class="logo">CattleCare</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li class="dropdown">
+                <a href="#monitoring">Health Monitoring</a>
+                <div class="dropdown-content">
+                    <a href="temperature.html">Temperature</a>
+                    <a href="pulse.html">Pulse Rate</a>
+                    <a href="respiratory.html">Respiratory Rate</a>
+                    <a href="feed-intake.html">Feed Intake</a>
+                    <a href="water-consumption.html">Water Consumption</a>
+                    <a href="milk-production.html">Milk Production</a>
+                    <a href="heart-rate-variability.html">Heart Rate Variability</a>
+                </div>
+            </li>
+            <li><a href="#diseasedetection">Disease Detection</a></li>
+            <li><a href="#about">About Cattle</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="cattle-info.html">Your Cattle</a></li>
+        </ul>
+    </nav>
+
+    <header id="home" class="hero">
+        <h1>Revolutionary Cattle Health Monitoring</h1>
+        <p>Empowering farmers with cutting-edge technology for optimal herd management</p>
+        <a href="#monitoring" class="btn">Discover Our Solutions</a>
+        <a href="gps.html" class="btn gps-location-btn">GPS Location</a>
+    </header>
+
+    <main>
+        <section id="monitoring">
+            <h2 class="HI">Health Monitoring Solutions</h2>
+            <div class="health-monitoring-container">
+                <a href="temperature.html" class="health-monitoring-box">
+                    <h3>Temperature Monitoring</h3>
+                    <img src="Temperature.jpg" alt="Temperature Monitoring">
+                    <p>Monitor temperature effectively.</p>
+                </a>
+                <a href="pulse.html" class="health-monitoring-box">
+                    <h3>Pulse Rate Monitoring</h3>
+                    <img src="Pulse.jpg" alt="Pulse Rate Monitoring">
+                    <p>Keep track of your pulse rate.</p>
+                </a>
+                <a href="respiratory.html" class="health-monitoring-box">
+                    <h3>Respiratory Rate Monitoring</h3>
+                    <img src="Respiration.jpg" alt="Respiratory Rate Monitoring">
+                    <p>Monitor your respiratory health.</p>
+                </a>
+                <a href="feed-intake.html" class="health-monitoring-box">
+                    <h3>Feed Intake Monitoring</h3>
+                    <img src="Feed.jpg" alt="Feed Intake Monitoring">
+                    <p>Track feed intake for optimal health.</p>
+                </a>
+                <a href="water-consumption.html" class="health-monitoring-box">
+                    <h3>Water Consumption Monitoring</h3>
+                    <img src="water.jpg" alt="Water Consumption Monitoring">
+                    <p>Ensure adequate water intake.</p>
+                </a>
+                <a href="milk-production.html" class="health-monitoring-box">
+                    <h3>Milk Production Monitoring</h3>
+                    <img src="milk.jpg" alt="Milk Production Monitoring">
+                    <p>Monitor milk production levels.</p>
+                </a>
+                <a href="heart-rate-variability.html" class="health-monitoring-box">
+                    <h3>Heart Rate Variability Monitoring</h3>
+                    <img src="heart.jpg" alt="Heart Rate Variability Monitoring">
+                    <p>Analyze heart rate variability.</p>
+                </a>
+            </div>
+            <div class="navigation">
+                <button id="prev">←</button>
+                <button id="next">→</button>
+            </div>
+        </section>
+
+        <section id="disease-detection">
+            <h2 class="HI">Disease Detection</h2>
+            <div class="disease-container">
+                <a href="current-status.html" class="disease-box">
+                    <h3>Current Status</h3>
+                    <img src="current-status.jpg" alt="Current Status">
+                    <p>Using ML models to analyze health parameters.</p>
+                </a>
+                <a href="prediction.html" class="disease-box">
+                    <h3>Potential Health Diseases</h3>
+                    <img src="prediction.jpg" alt="Disease Prediction">
+                    <p>Prediction based on health monitoring parameters.</p>
+                </a>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <h2>Cattle Infomation</h2>
+            <div class ="info-columns">
+                <div class="info-column">
+                    <h3>Cattle Physiology</h3>
+                    <p>Explore the unique aspects of bovine biology, including their four-chambered stomach and cud-chewing behavior.</p>
+                    <a href="cattlle-physiology.html" class="btn">Learn More</a>
+                </div>
+                <div class="info-column">
+                    <h3>Common Diseases</h3>
+                    <p>Understanding prevalent cattle diseases such as mastitis, foot-and-mouth disease, and bovine respiratory disease.</p>
+                    <a href="common-disease.html" class="btn">Explore</a>
+                </div>
+                <div class="info-column">
+                    <h3>Nutrition Requirements</h3>
+                    <p>Insights into the dietary needs of cattle for optimal health and productivity.</p>
+                    <a href="cattle-nutrition.html" class="btn">Discover More</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="contact-container">
+                <div class="contact-description">
+                    <h2>Contact a Veterinarian</h2>
+                    <p>If you have any questions or need assistance, feel free to reach out to our veterinarians. They are here to help you and your pets!</p>
+                    <div class="chat-box">
+                        <div class="chat-display" id="chatDisplay"></div>
+                        <input type="text" id="userInput" placeholder="Type your message..." />
+                        <button id="sendButton">Send</button>
+                    </div>
+                </div>
+                <div class="contact-image">
+                    <img src="Vet.jpg" alt="Veterinarian" />
+                </div>
+            </div>
+        </section>
+
+        <div id="chat-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Chat with a Veterinarian</h2>
+                <div id="chat-messages"></div>
+                <input type="text" id="chat-input" placeholder="Type your message...">
+                <button id="send-msg" class="btn">Send</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#monitoring">Health Monitoring</a></li>
+                    <li><a href="disease-detection.html">Disease Detection</a></li>
+                    <li><a href="#about">About Cattle</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@cattlecare.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <!-- Add social media icons here -->
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 CattleCare - Advanced Health Monitoring Solutions</p>
+        </div>
+    </footer>
+
+   
+
+    <script src="script.js"></script>
+</body>
+</html>      

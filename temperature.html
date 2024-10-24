@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CattleCare - Temperature Monitoring</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">CattleCare</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="index.html">Health Monitoring</a>
+                <div class="dropdown-content">
+                    <a href="temperature.html">Temperature</a>
+                    <a href="pulse.html">Pulse Rate</a>
+                    <a href="respiratory.html">Respiratory Rate</a>
+                    <a href="feed-intake.html">Feed Intake</a>
+                    <a href="water-consumption.html">Water Consumption</a>
+                    <a href="milk-production.html">Milk Production</a>
+                    <a href="heart-rate-variability.html">Heart Rate Variability</a>
+                </div>
+            </li>
+            <li><a href="disease-detection.html">Disease Detection</a></li>
+            <li><a href="#about">About Cattle</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="cattle-info.html">Your Cattle</a></li>
+        </ul>
+    </nav>
+
+    <main class="section">
+        <h1>Temperature Monitoring</h1>
+        <section id="current-temperature" class="feature-card">
+            <h2>Current Temperature</h2>
+            <div id="temperature-value">Loading...</div>
+        </section>
+        <section id="temperature-history" class="feature-card">
+            <h2>Temperature History</h2>
+            <ul id="temperature-list"></ul>
+        </section>
+        <button id="refresh-button" class="btn">Refresh Data</button>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <!-- Footer content -->
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 CattleCare - Advanced Health Monitoring Solutions</p>
+        </div>
+    </footer>
+
+    <script src="temperature.js"></script>
+</body>
+</html>

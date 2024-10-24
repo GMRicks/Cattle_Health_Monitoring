@@ -1,0 +1,1199 @@
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #e74c3c;
+  --background-color: #ecf0f1;
+  --text-color: #34495e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 60px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+.navbar {
+  background-color: var(--primary-color);
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navbar ul li {
+  margin-left: 1rem;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+  color: var(--secondary-color);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Update the dropdown styles */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--primary-color);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white !important;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--secondary-color) !important;
+  color: white !important;
+}
+
+.dropdown-content a {
+  color: white; /* Ensure text is always white */
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  
+}
+
+.dropdown-content a:hover {
+  background-color: var(--secondary-color);
+  color: white; /* Keep text white on hover */
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  
+}
+
+.dropdown:hover .dropbtn {
+  background-color: var(--secondary-color);
+}
+
+/* Update the feature card styles */
+.feature-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-decoration: none; /* Remove underline */
+  color: var(--text-color); /* Use the default text color */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-card img {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  text-align: center; /* Center the title */
+  margin-top: auto; /* Push title to the bottom */
+}
+
+
+.hero {
+  background-image: url('Main.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 0 1rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--accent-color);
+}
+
+.section {
+  padding: 4rem 2rem;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.feature-grid, .info-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card, .info-column {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card img {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #000;
+}
+.footer-content
+{
+  color:white;
+}
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 2rem;
+}
+
+.footer-content {
+  color:white;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .navbar ul {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .navbar ul li {
+      margin: 0.5rem 0;
+  }
+
+  .hero h1 {
+      font-size: 2rem;
+  }
+
+  .hero p {
+      font-size: 1rem;
+  }
+}
+
+#current-temperature, #temperature-history {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid var(--secondary-color);
+  border-radius: 5px;
+}
+
+#temperature-value {
+  font-size: 2em;
+  margin-top: 10px;
+  color: var(--accent-color);
+}
+
+#temperature-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+#temperature-list li {
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color: #f0f0f0;
+  border-radius: 3px;
+}
+
+#refresh-button {
+  display: block;
+  margin: 20px auto;
+}
+#current-pulse, #pulse-history {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid var(--secondary-color);
+  border-radius: 5px;
+}
+
+#pulse-value {
+  font-size: 2em;
+  margin-top: 10px;
+  color: var(--accent-color);
+}
+
+#pulse-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+#pulse-list li {
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color: #f0f0f0;
+  border-radius: 3px;
+}
+
+#current-respiratory, #respiratory-history {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid var(--secondary-color);
+  border-radius: 5px;
+}
+
+#respiratory-value {
+  font-size: 2em;
+  margin-top: 10px;
+  color: var(--accent-color);
+}
+
+#respiratory-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+#respiratory-list li {
+  margin-bottom: 5px;
+  padding: 5px;
+  background-color: #f0f0f0;
+  border-radius: 3px;
+}
+
+.feed-section {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#feed-form {
+  display: grid;
+  gap: 10px;
+}
+
+#feed-form label {
+  font-weight: bold;
+}
+
+#feed-form input,
+#feed-form select {
+  width: 100%;
+  padding: 8px;
+   border: 1px solid #ccc;
+}
+
+#feed-form button[type="submit"] {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.comparison-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.actual-intake,
+.ideal-intake {
+  flex-basis: 45%;
+  text-align: center;
+}
+
+#intake-chart {
+  width: 100%;
+  height: 200px;
+}
+
+#nutrition-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#nutrition-table th,
+#nutrition-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+#feeding-tips ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#feeding-tips li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+#feeding-tips li:last-child {
+  border-bottom: none;
+}
+
+.water-section {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: auto;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+input[type="number"],
+select {
+  width: 100%;
+  padding: 15px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 18px;
+}
+
+button.water-btn {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+button.water-btn:hover {
+  background-color: #3e8e41;
+}
+
+.comparison-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.actual-water-intake,
+.ideal-water-intake {
+  flex-basis: 45%;
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f7f7f7;
+}
+
+.chart-container {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f7f7f7;
+}
+
+.chart-bar {
+  height: 30px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.chart-bar.actual {
+  background-color: #337ab7;
+  color: #fff;
+}
+
+.chart-bar.ideal {
+  background-color: #8bc34a;
+  color: #fff;
+}
+
+.cattle-info-container 
+{
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.cattle-image {
+width: 30%;
+height: 100%;
+margin-right: 20px;
+}
+
+.cattle-imageEnlarge {
+width: 100%;
+height: 100%;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.cattle-details {
+width: 70%;
+height: 100%;
+padding: 20px;
+border: 1px solid #ccc;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.health-monitoring ul {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+.health-monitoring li {
+margin-bottom: 20px;
+}
+
+.health-monitoring h4 {
+margin-top: 0;
+}
+
+.health-monitoring p {
+margin-bottom: 10px;
+}
+
+#cattle-name, #cattle-type, #current-temp, #current-heart-rate, #current-respiratory-rate, #current-feed-intake, #current-water-consumption {
+font-weight: bold;
+}
+
+#cattle-name, #cattle-type {
+font-size: 18px;
+}
+
+#cattle-name::before, #cattle-type::before {
+content: ": ";
+}
+
+#cattle-name::before {
+content: "Name: ";
+}
+
+#cattle-type::before {
+content: "Type: ";
+}
+
+#add-cattle-btn {
+margin-top: 20px;
+}
+
+#cattle-info-general {
+margin-top: 40px;
+}
+
+#cattle-info-general h3 {
+margin-top: 0;
+}
+
+#cattle-info-general p {
+margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+.cattle-info-container {
+  flex-direction: column;
+}
+
+.cattle-image {
+  width: 100%;
+  height: 30vw;
+  margin-right: 0;
+  margin-bottom: 20px;
+}
+
+.cattle-details {
+  width: 100%;
+}
+}
+
+
+.cattle-info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cattle-image {
+  width: 100%;
+  height: 500px;
+  margin-right: 20px;
+}
+
+.cattle-imageEnlarge {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.cattle-details {
+  width: 70%;
+  height: 100%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.health-monitoring ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.health-monitoring li {
+  margin-bottom: 20px;
+}
+
+.health-monitoring h4 {
+  margin-top: 0;
+}
+
+.health-monitoring p {
+  margin-bottom: 10px;
+}
+
+#cattle-name, #cattle-type, #current-temp, #current-heart-rate, #current-respiratory-rate, #current-feed-intake, #current-water-consumption {
+  font-weight: bold;
+}
+
+#cattle-name, #cattle-type {
+  font-size: 18px;
+}
+
+#cattle-name::before, #cattle-type::before {
+  content: ": ";
+}
+
+#cattle-name::before {
+  content: "Name: ";
+}
+
+#cattle-type::before {
+  content: "Type: ";
+}
+
+#add-cattle-btn {
+  margin-top: 20px;
+}
+
+#cattle-info-general {
+  margin-top: 40px;
+}
+
+#cattle-info-general h3 {
+  margin-top: 0;
+}
+
+#cattle-info-general p {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .cattle-info-container {
+    flex-direction: column;
+  }
+
+  .cattle-image {
+    width: 100%;
+    height: 1px;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .cattle-details {
+    width: 100%;
+  }
+}
+.gps-location-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  text-decoration: none; /* No underline */
+  border-radius: 5px; /* Rounded corners */
+}
+
+.gps-location-btn:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+
+#get-location-btn {
+background-color: #4CAF50;
+color: #fff;
+border: none;
+padding: 10px 20px;
+font-size: 18px;
+cursor: pointer;
+}
+
+#get-location-btn:hover {
+background-color: #45a049;
+}
+
+.map-container {
+height: 500px;
+width: 100%;
+margin-top: 20px;
+}
+
+#map {
+height: 100%;
+width: 100%;
+border: none;
+}
+.cattle-image {
+position: relative;
+width: 400px; /* Set the width of the image box */
+height: 400px; /* Set the height of the image box */
+border: 1px solid #ccc;
+border-radius: 5px;
+padding: 10px;
+text-align: center;
+}
+
+.cattle-imageEnlarge {
+width: 100%;
+height: 100%;
+object-fit: cover;
+border-radius: 5px;
+}
+
+#upload-button {
+position: absolute;
+bottom: 10px;
+left: 50%;
+transform: translateX(-50%);
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+background-color: #4CAF50;
+color: #fff;
+cursor: pointer;
+}
+
+#upload-button:hover {
+background-color: #3e8e41;
+}
+.nutrition-section {
+display: flex;
+justify-content: space-between;
+align-items: flex-start; /* Align items at the start */
+margin: 20px 0; /* Add some margin */
+}
+
+.nutrition-info {
+flex: 1; /* Allow this section to take available space */
+padding-right: 20px; /* Space between text and image */
+}
+
+.nutrition-image {
+flex: 0 0 25%; /* Fixed width for the image section */
+}
+
+.nutrition-image img {
+width: 100%; /* Make the image responsive */
+height: auto; /* Maintain aspect ratio */
+border-radius: 5px; /* Optional: rounded corners */
+}
+.physiology-section {
+display: flex;
+justify-content: space-between;
+align-items: flex-start; /* Align items at the start */
+margin: 20px 0; /* Add some margin */
+}
+
+.physiology-info {
+flex: 1; /* Allow this section to take available space */
+padding-right: 20px; /* Space between text and image */
+}
+
+.physiology-image {
+flex: 0 0 30%; /* Adjust this value to control the image width */
+max-width: 500px; /* Set a maximum width for the image */
+}
+
+.physiology-image img {
+width: 100%; /* Make the image responsive */
+height: auto; /* Maintain aspect ratio */
+border-radius: 5px; /* Optional: rounded corners */
+}
+
+.disease-section {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+margin-bottom: 20px;
+}
+
+.disease-info {
+width: 60%;
+margin-right: 20px;
+}
+
+.disease-image {
+width: 30%;
+margin-left: 20px;
+}
+
+.disease-imageEnlarge {
+width: 100%;
+height: 200px;
+object-fit: cover;
+border-radius: 10px;
+cursor: pointer;
+}
+
+.disease-imageEnlarge:hover {
+transform: scale(1.1);
+}
+
+.disease-container {
+display: flex; /* Flexbox for horizontal alignment */
+justify-content: center; /* Center the title */
+flex-wrap: nowrap; /* Prevent wrapping */
+margin: 0 auto; /* Center the container */
+max-width: 1000px; /* Limit the maximum width of the container */
+align-items: center;
+}
+
+.disease-title {
+text-align: center; /* Center text horizontally */
+margin: 20px 0; /* Add vertical space above and below the title */
+font-size: 24px; /* Adjust font size as needed */
+font-weight: bold; /* Make the title bold for emphasis */
+}
+
+.disease-box {
+display: flex; /* Flexbox for content alignment */
+flex-direction: column; /* Stack content vertically */
+justify-content: flex-start; /* Align items to the start */
+align-items: center; /* Center content horizontally */
+background-color: #f9f9f9; /* Light background for boxes */
+border: 1px solid #ddd; /* Light border */
+border-radius: 20px; /* Increased border radius for rounded corners */
+padding: 20px; /* Padding inside boxes */
+margin: 0 10px; /* Margin between boxes */
+width: 600px; /* Increased width for larger boxes */
+height: 550px; /* Increased height for larger boxes */
+text-decoration: none; /* Remove underline from links */
+color: black; /* Text color */
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+transition: transform 0.2s; /* Smooth transform for hover effect */
+overflow: hidden; /* Prevent overflow of content */
+text-align: center; /* Center text within the box */
+}
+
+.disease-box:hover {
+transform: scale(1.05); /* Slightly enlarge box on hover */
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+.disease-box img {
+max-width: 90%; /* Responsive images */
+height: auto; /* Maintain aspect ratio */
+border-radius: 4px; /* Rounded corners for images */
+margin-bottom: 15px; /* Space between image and text */
+}
+
+.disease-box h3, 
+.disease-box p {
+margin: 0; /* Remove default margin */
+padding: 5px; /* Add some padding for better spacing */
+}
+.HI {
+
+padding: 10px 15px; /* Padding for spacing */
+border-radius: 5px; /* Rounded corners */
+font-size: 20px; /* Font size */
+text-align: center; /* Center text */
+margin: 10px 0; /* Margin for spacing */
+}
+
+.section {
+padding: 20px;
+}
+
+.contact-container {
+display: flex;
+justify-content: space-between;
+align-items: center; /* Center items vertically */
+margin-bottom: 20px;
+width: 1400px;
+}
+
+.contact-description {
+flex: 1;
+padding: 20px;
+background-color: #ffffff; /* White background for the description */
+border-radius: 8px; /* Rounded corners */
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.contact-image {
+flex: 0 0 500px; /* Adjusted width for the image */
+text-align: center; /* Center image */
+}
+
+.contact-image img {
+max-width: 100%; /* Responsive image */
+height: auto; /* Maintain aspect ratio */
+border-radius: 8px; /* Rounded corners */
+}
+
+.chat-box {
+margin-top: 20px;
+border-radius: 8px; /* Rounded corners */
+overflow: hidden; /* Prevent overflow */
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Shadow for chat box */
+background-color: whitesmoke; /* White background for chat box */
+max-width: 500px; /* Set a max width for the chat box */
+}
+
+.chat-display, #chat-messages {
+border: none; /* Remove border */
+height: 250px; /* Decreased height for better visibility */
+overflow-y: auto;
+padding: 15px;
+background-color: #e9ecef; /* Light gray background */
+border-radius: 8px 8px 0 0; /* Rounded corners for top */
+}
+
+.message {
+margin: 10px 0;
+padding: 10px 15px; /* Padding for messages */
+border-radius: 20px; /* Rounded message bubbles */
+max-width: 70%; /* Limit message width */
+word-wrap: break-word; /* Allow long words to break */
+}
+
+.user {
+background-color: #d1e7dd; /* Light green for user messages */
+margin-left: auto; /* Align user messages to the right */
+color: #0f5132; /* Darker text color */
+}
+
+.vet {
+background-color: #f8d7da; /* Light red for vet messages */
+margin-right: auto; /* Align vet messages to the left */
+color: #721c24; /* Darker text color */
+}
+
+.modal {
+display: none; /* Hidden by default */
+position: fixed;
+z-index: 1; /* Sit on top */
+left: 0;
+top: 0;
+width: 100%; /* Full width */
+height: 100%; /* Full height */
+overflow: auto; /* Enable scroll if needed */
+background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+}
+
+.modal-content {
+background-color: #ffffff;
+margin: 10% auto; /* Center modal */
+padding: 20px;
+border-radius: 8px; /* Rounded corners */
+width: 80%; /* Could be more or less, depending on screen size */
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Shadow for modal */
+}
+
+/* Button styling */
+.btn {
+background-color: #007bff; /* Bootstrap primary color */
+color: white; /* White text */
+border: none; /* No border */
+border-radius: 5px; /* Rounded corners */
+padding: 10px 15px; /* Padding */
+cursor: pointer; /* Pointer cursor */
+transition: background-color 0.3s; /* Transition effect */
+}
+
+.btn:hover {
+background-color: #0056b3; /* Darker on hover */
+}
+
+.close {
+cursor: pointer; /* Pointer cursor for close button */
+font-size: 20px; /* Larger size */
+}
+
+#monitoring {
+  text-align: center; /* Center the heading */
+}
+
+.health-monitoring-container {
+  display: flex;
+  justify-content: space-around; /* Evenly distribute boxes */
+  flex-wrap: wrap; /* Allow wrapping to the next line */
+  max-width: 1200px; /* Set a max width for the container */
+  margin: auto; /* Center the container */
+  padding: 20px; /* Add some padding */
+}
+
+.health-monitoring-box {
+  background-color: #ffffff;
+  border-radius: 50px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+  width: 350px; /* Fixed width for boxes */
+  margin:20px 0; /* Space between boxes */
+  text-decoration: none; /* Remove underline from links */
+  color: black; /* Text color */
+}
+
+.health-monitoring-box img {
+  max-width: 100%; /* Responsive images */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 4px; /* Slightly round the image corners */
+}
+
+.health-monitoring-box:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.navigation {
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f0f4f8;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h2 {
+  color: #2c3e50;
+  font-size: 2.5em;
+}
+
+.header p {
+  color: #666;
+  font-size: 1.2em;
+}
+
+.upload-section,
+.results {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.upload-section h3 {
+  color: #2c3e50;
+  font-size: 1.5em;
+}
+
+.upload-section input[type="file"],
+.upload-section textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.upload-section button {
+  width: 100%;
+  padding: 10px;
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.upload-section button:hover {
+  background-color: #3498db;
+}
+
+.results h4 {
+  color: #2c3e50;
+  font-size: 1.5em;
+}
+
+.contact-vet button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.contact-vet button:hover {
+  background-color: #45a049;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+  color: #333;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+#results {
+  margin-top: 20px;
+  display: none; /* Initially hidden */
+}
